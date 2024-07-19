@@ -5,6 +5,7 @@ import SidebarLink from "./SidebarLink";
 import { VscSignOut } from "react-icons/vsc";
 import ConfirmationModal from "../../Common/ConfirmationModal";
 import { sidebarLinks } from "../../../utils/DashboardLinks";
+import { logout } from "../../../services/operations/auth";
 
 const Sidebar = () => {
 
