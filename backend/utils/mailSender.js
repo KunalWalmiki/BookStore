@@ -4,8 +4,6 @@ require("dotenv").config();
 
 exports.mailSender = async (email, title, token) => {
 
-    console.log(email);
-
   try {
     let transporter = nodemailer.createTransport({
       host: process.env.MAIL_HOST,
@@ -20,10 +18,10 @@ exports.mailSender = async (email, title, token) => {
       from: `"BooksMart" <${process.env.MAIL_USER}>`, // sender address
       to: `${email}`, // list of receivers
       subject: `${title}`, // Subject line
-      html: `Please verify your email by clicking on the following link: http://localhost:4000/api/v1/auth/verify-email?token=${token}`, // html body
+      html: `Please verify your email by clicking on the following link: ${process.env.BASE_URL}?token=${token}`, // html body
     })
 
-    console.log(info.response);
+    // console.log(info.response);
 
     return info
 

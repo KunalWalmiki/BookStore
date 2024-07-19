@@ -51,8 +51,8 @@ userSchema.pre('save', async function (next) {
       const verificationToken = jwt.sign({ email: user.email }, process.env.jwt_secret, { expiresIn: '5m' });
       user.verificationToken = verificationToken;
       user.expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes from now
-      console.log("hello");
-      console.log(verificationToken);
+    //   console.log("hello");
+    //   console.log(verificationToken);
       // Send verification email
       await mailSender(user.email, "Verfiy Your Email with Below Link", verificationToken);
     }
