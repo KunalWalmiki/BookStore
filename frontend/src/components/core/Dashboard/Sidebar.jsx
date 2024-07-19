@@ -47,7 +47,7 @@ transition-all duration-200 hover:bg-yellow-800 hover:scale-95"
               text2: "You Will Be logged Out From Your Account",
               btn1Text: "Logout",
               btn2Text: "Cancel",
-              btn1Handler: () => dispatch(logout(navigate)),
+              btn1Handler: () => logout(navigate, dispatch),
               btn2Handler: () => setConfirmationModal(null),
               customClasses: "top-[10%] left-[43%]",
               icon: "VscSignOut",
